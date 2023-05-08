@@ -1,0 +1,13 @@
+.contenedor_clear {
+
+}
+
+.contenedor_clear_button {
+	width: 250px;
+	height: 50px;
+	border-radius: 50px;
+	background-color: skyblue;
+	border: solid 1px skyblue;
+	font-size: 20px;
+	font-family: sans-serif;
+}
