@@ -5,6 +5,7 @@ const BotonNumero = ({ estilo, children, presionar })=> {
 // pues esto no seria un props
 // ahora, como hago para que este valor se lo pase a un componente hermano (Display)	
 
+let hijo = children;
 
 	return (
 		<div>
@@ -23,6 +24,8 @@ const BotonNumero = ({ estilo, children, presionar })=> {
 }
 
 export default BotonNumero;
+
+
 
 // vamos a utilizar varios estilos en los operadores a ver si me sale
 // esto significa que no se puede utilizar los operadores ternarios
