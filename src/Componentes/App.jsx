@@ -4,19 +4,30 @@ import Display from './Display';
 import BotonNumero from './BotonNumero';
 import BotonClear from './BotonClear';
 import { useState } from 'react';
+import { evaluate } from 'mathjs'; 
+// para usar este metodo hay que instalar el paquete mathjs
+// esto se hizo con el comando npm install mathjs
 
 function App() {
 
-  let [contador, setContador] = useState(0);
+  let [contador, setContador] = useState("");
 
-  const presionarNum = ()=> {
+  //funcion para sumarle caracteres al display
+  //Notese que se le pasa un argumento a la funcion
+  //y cuando esa funcion la llama el componente, pues tenemos
+  //que psarle como argumento el valor de children
+  const presionarNum = (input)=> {
     console.log("hola")
-    setContador(contador += "children")
+    setContador(contador + input)
   }
 
-  const operadorEstilo = {
-    backgroundColor: 'darkgreen',
-    borderColor: 'darkgreen',
+  //funcion para limpiar el display
+  const clear = ()=>{
+    setContador(contador = "")
+  }
+
+  const calculo = ()=>{
+    setContador(evaluate(contador))
   }
 
   return (
@@ -36,28 +47,26 @@ function App() {
           />
 
           <div className='contenedor_numeros'>
-            <BotonNumero
-              presionar = {presionarNum}
-            >7</BotonNumero>
-            <BotonNumero>8</BotonNumero>
-            <BotonNumero>9</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>+</BotonNumero>
-            <BotonNumero>4</BotonNumero>
-            <BotonNumero>5</BotonNumero>
-            <BotonNumero>6</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>-</BotonNumero>
-            <BotonNumero>1</BotonNumero>
-            <BotonNumero>2</BotonNumero>
-            <BotonNumero>3</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>*</BotonNumero>
-            <BotonNumero>=</BotonNumero>
-            <BotonNumero>0</BotonNumero>
-            <BotonNumero>.</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>/</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>7</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>8</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>9</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>+</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>4</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>5</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>6</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>-</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>1</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>2</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>3</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>*</BotonNumero>
+            <BotonNumero presionar = {calculo}>=</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>0</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>.</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>/</BotonNumero>
             
           </div>
           
-          <BotonClear />
+          <BotonClear limpiar = {clear} />
         </div>
 
       </div>

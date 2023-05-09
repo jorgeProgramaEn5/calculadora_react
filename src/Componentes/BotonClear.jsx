@@ -1,9 +1,14 @@
 import '../Estilos/BotonClear.css';
 
-const BotonClear = ()=> {
+const BotonClear = ( {children, limpiar } )=> {
 	return (
 		<div className='contenedor_clear'>
-			<button className='contenedor_clear_button'>Clear</button>
+			<button 
+				className='contenedor_clear_button'
+				onClick={limpiar}
+			>
+			Clear
+			</button>
 		</div>
 	)
 }

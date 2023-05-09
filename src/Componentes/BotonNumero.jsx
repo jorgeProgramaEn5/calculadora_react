@@ -1,20 +1,21 @@
 import '../Estilos/BotonNumero.css';
 
 const BotonNumero = ({ estilo, children, presionar })=> {
-// como todos los botones van mostrar si valor en display
-// pues esto no seria un props
-// ahora, como hago para que este valor se lo pase a un componente hermano (Display)	
 
-let hijo = children;
+	// isNaN devuelve false si un caracter es un numero
+	function esOperador(valor) {
+			return isNaN(valor) && (valor !== '.') && (valor !== '=')
+	}
 
 	return (
 		<div>
 			<div className='contenedor'>
 				<button 
-					className='contenedor_button' 
-					style={estilo} 
-					onClick={presionar}
-					// onMouseOver="this.style.color='#f00'"
+					className={`contenedor_button ${esOperador(children)? "operador" : "boton"}`}
+					onClick={()=>presionar(children)} //Notese que en esta linea se le pasa una funcion para que
+																						//que llame a la funcion presionar, esto se hace asi porque
+																						//si pasamos presionar(children), obtiene el valor que retorna
+																						//y no la funcion
 				>
 				{children}
 				</button>
@@ -24,11 +25,3 @@ let hijo = children;
 }
 
 export default BotonNumero;
-
-
-
-// vamos a utilizar varios estilos en los operadores a ver si me sale
-// esto significa que no se puede utilizar los operadores ternarios
-// y tendremos que pasarle objetos a los estilos, esto hay que hacerlo con el atributo style
-
-// className='contenedor_button'
