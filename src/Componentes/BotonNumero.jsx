@@ -1,13 +1,34 @@
 import '../Estilos/BotonNumero.css';
 
-const BotonNumero = ()=> {
+const BotonNumero = ({ estilo, children })=> {
+// como todos los botones van mostrar si valor en display
+// pues esto no seria un props
+// ahora, como hago para que este valor se lo pase a un componente hermano (Display)	
+	
+	const presionarNum = ()=> {
+    console.log(children)
+  }
+
 	return (
 		<div>
 			<div className='contenedor'>
-				<button className='contenedor_button'>1</button>
+				<button 
+					className='contenedor_button' 
+					style={estilo} 
+					onClick={presionarNum}
+					// onMouseOver="this.style.color='#f00'"
+				>
+				{children}
+				</button>
 			</div>
 		</div>
 	)
 }
 
 export default BotonNumero;
+
+// vamos a utilizar varios estilos en los operadores a ver si me sale
+// esto significa que no se puede utilizar los operadores ternarios
+// y tendremos que pasarle objetos a los estilos, esto hay que hacerlo con el atributo style
+
+// className='contenedor_button'

@@ -9,7 +9,7 @@
 
 .contenedor_app {
   width: 500px;
-  border: solid 2px darkgoldenrod;
+/*  border: solid 2px darkgoldenrod;*/
   display: flex;
   flex-direction: column;
 /*  justify-content: center;*/
@@ -17,7 +17,7 @@
 }
 
 .contenedor_logo {
-  border: solid 2px darkgoldenrod;
+/*  border: solid 2px darkgoldenrod;*/
   width: 300px;
   height: 100px;
   display: flex;
@@ -28,14 +28,19 @@
 .contenedor_img {
   width: 70px;
   background-color: rebeccapurple;
+  margin: 5px;
 }
 
 .img {
   width: 100%;
+  animation: App-logo-spin infinite 50s linear;
+
 }
 
 .contenedor_calculadora {
-  border: solid 2px darkgoldenrod;
+/*  border: solid 2px darkgoldenrod;*/
+  background-color: royalblue;
+  border-radius: 20px;
   min-height: 490px;
   display: flex;
   flex-direction: column;
@@ -84,3 +89,7 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+

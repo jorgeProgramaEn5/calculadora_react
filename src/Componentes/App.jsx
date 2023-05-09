@@ -5,6 +5,16 @@ import BotonNumero from './BotonNumero';
 import BotonClear from './BotonClear';
 
 function App() {
+
+  // const presionarNum = ()=> {
+  //   console.log("hola")
+  // }
+
+  const operadorEstilo = {
+    backgroundColor: 'darkgreen',
+    borderColor: 'darkgreen',
+  }
+
   return (
     <div className='App'>
       <div className='contenedor_app'>
@@ -20,22 +30,25 @@ function App() {
           <Display />
 
           <div className='contenedor_numeros'>
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
-            <BotonNumero />
+            <BotonNumero
+              // presionar = {presionarNum}
+            >7</BotonNumero>
+            <BotonNumero>8</BotonNumero>
+            <BotonNumero>9</BotonNumero>
+            <BotonNumero estilo = {operadorEstilo}>+</BotonNumero>
+            <BotonNumero>4</BotonNumero>
+            <BotonNumero>5</BotonNumero>
+            <BotonNumero>6</BotonNumero>
+            <BotonNumero estilo = {operadorEstilo}>-</BotonNumero>
+            <BotonNumero>1</BotonNumero>
+            <BotonNumero>2</BotonNumero>
+            <BotonNumero>3</BotonNumero>
+            <BotonNumero estilo = {operadorEstilo}>*</BotonNumero>
+            <BotonNumero>=</BotonNumero>
+            <BotonNumero>0</BotonNumero>
+            <BotonNumero>.</BotonNumero>
+            <BotonNumero estilo = {operadorEstilo}>/</BotonNumero>
+            
           </div>
           
           <BotonClear />
