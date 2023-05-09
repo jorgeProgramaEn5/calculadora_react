@@ -11,7 +11,7 @@ function App() {
 
   const presionarNum = ()=> {
     console.log("hola")
-    setContador(contador += '7')
+    setContador(contador += "children")
   }
 
   const operadorEstilo = {
