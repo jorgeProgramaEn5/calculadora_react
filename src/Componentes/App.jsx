@@ -3,12 +3,16 @@ import calculadora_logo from '../img/calculadora_logo.png';
 import Display from './Display';
 import BotonNumero from './BotonNumero';
 import BotonClear from './BotonClear';
+import { useState } from 'react';
 
 function App() {
 
-  // const presionarNum = ()=> {
-  //   console.log("hola")
-  // }
+  let [contador, setContador] = useState(0);
+
+  const presionarNum = ()=> {
+    console.log("hola")
+    setContador(contador += '7')
+  }
 
   const operadorEstilo = {
     backgroundColor: 'darkgreen',
@@ -27,11 +31,13 @@ function App() {
         </div>
 
         <div className='contenedor_calculadora'>
-          <Display />
+          <Display 
+            operacion={ contador } 
+          />
 
           <div className='contenedor_numeros'>
             <BotonNumero
-              // presionar = {presionarNum}
+              presionar = {presionarNum}
             >7</BotonNumero>
             <BotonNumero>8</BotonNumero>
             <BotonNumero>9</BotonNumero>

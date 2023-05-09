@@ -1,10 +1,10 @@
 import '../Estilos/Display.css';
 
 
-const BotonDisplay = ()=> {
+const BotonDisplay = ({ operacion })=> {
 	return (
 		<div>
-			<div className='contenedor_display'>1+5</div>
+			<div className='contenedor_display'>{ operacion }</div>
 		</div>
 	)
 }
