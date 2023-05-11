@@ -12,7 +12,7 @@ const BotonNumero = ({ estilo, children, presionar })=> {
 				<button 
 					className='contenedor_button' 
 					style={estilo} 
-					onClick={presionar}
+					onClick={()=>presionar(children)}
 					// onMouseOver="this.style.color='#f00'"
 				>
 				{children}

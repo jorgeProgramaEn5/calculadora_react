@@ -7,11 +7,14 @@ import { useState } from 'react';
 
 function App() {
 
-  let [contador, setContador] = useState(0);
+  let [contador, setContador] = useState("");
 
-  const presionarNum = ()=> {
-    console.log("hola")
-    setContador(contador += '7')
+  const presionarNum = (value)=> {
+    setContador(contador + value)
+  }
+
+  const clear = ()=> {
+    setContador(contador = "")
   }
 
   const operadorEstilo = {
@@ -36,28 +39,26 @@ function App() {
           />
 
           <div className='contenedor_numeros'>
-            <BotonNumero
-              presionar = {presionarNum}
-            >7</BotonNumero>
-            <BotonNumero>8</BotonNumero>
-            <BotonNumero>9</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>+</BotonNumero>
-            <BotonNumero>4</BotonNumero>
-            <BotonNumero>5</BotonNumero>
-            <BotonNumero>6</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>-</BotonNumero>
-            <BotonNumero>1</BotonNumero>
-            <BotonNumero>2</BotonNumero>
-            <BotonNumero>3</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>*</BotonNumero>
-            <BotonNumero>=</BotonNumero>
-            <BotonNumero>0</BotonNumero>
-            <BotonNumero>.</BotonNumero>
-            <BotonNumero estilo = {operadorEstilo}>/</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>7</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>8</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>9</BotonNumero>
+            <BotonNumero presionar = {presionarNum} estilo = {operadorEstilo}>+</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>4</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>5</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>6</BotonNumero>
+            <BotonNumero presionar = {presionarNum} estilo = {operadorEstilo}>-</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>1</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>2</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>3</BotonNumero>
+            <BotonNumero presionar = {presionarNum} estilo = {operadorEstilo}>*</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>=</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>0</BotonNumero>
+            <BotonNumero presionar = {presionarNum}>.</BotonNumero>
+            <BotonNumero presionar = {presionarNum} estilo = {operadorEstilo}>/</BotonNumero>
             
           </div>
           
-          <BotonClear />
+          <BotonClear limpiar= {clear} />
         </div>
 
       </div>
