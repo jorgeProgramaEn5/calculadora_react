@@ -5,6 +5,7 @@ import BotonNumero from './BotonNumero';
 import BotonClear from './BotonClear';
 import { useState } from 'react';
 import { evaluate } from 'mathjs'; 
+
 // para usar este metodo hay que instalar el paquete mathjs
 // esto se hizo con el comando npm install mathjs
 
@@ -12,23 +13,31 @@ function App() {
 
   let [contador, setContador] = useState("");
 
-  //funcion para sumarle caracteres al display
-  //Notese que se le pasa un argumento a la funcion
-  //y cuando esa funcion la llama el componente, pues tenemos
-  //que psarle como argumento el valor de children
-  const presionarNum = (input)=> {
-    console.log("hola")
-    setContador(contador + input)
-  }
+  // funcion para sumarle caracteres al display
+  // Notese que se le pasa un argumento a la funcion
+  // y cuando esa funcion la llama el componente, pues tenemos
+  // que psarle como argumento el valor de children
 
-  //funcion para limpiar el display
+  const presionarNum = (input)=> {
+    setContador(contador + input);
+  };
+
+  // funcion para limpiar el display
   const clear = ()=>{
-    setContador(contador = "")
-  }
+    setContador(contador = "");
+  };
+
+  // en js existen valores truthy y falsy y lo qu significa es que son valores
+  // que por si solos son verdaderos o falsos, ejemplo, las cadenas de caracteres vacias
+  // son falsas, por eso en esta funcion, si contador esta vacio, pues devuelve falso
 
   const calculo = ()=>{
-    setContador(evaluate(contador))
-  }
+    if (contador) {
+      setContador(evaluate(contador));
+    } else {
+        alert("ingrese digitos por favor");
+      }
+  };
 
   return (
     <div className='App'>
